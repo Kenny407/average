@@ -17,7 +17,30 @@ const onNewNavigation = function onNewNavigation(details) {
   }
 };
 
+const onBeforeSendingHeaders = function onBeforeSendingHeaders(reqDetails) {
+  const { requestHeaders } = reqDetails;
+  const filteredHeaders = requestHeaders.filter(header => header.name !== 'User-Agent');
+  console.log('filtered headers', filteredHeaders);
+  return { requestHeaders: filteredHeaders };
+};
+
+// Not sure why we would we need this one but it has some interesting information.
+const onBeforeRequest = function onBeforeRequest(reqDetails) {
+  console.log('before sending the request');
+  const {
+    initiator,
+    method,
+    timeStamp,
+  } = reqDetails;
+  console.log(`${initiator}, ${method}, ${timeStamp}`);
+};
 
 // WHICH IS IT?!
 chrome.tabs.onCreated.addListener(onNewNavigation);
 // chrome.webNavigation.onDOMContentLoaded.addListener(onNewNavigation);
+
+// Remove the User-Agent from the headers of the web request
+chrome.webRequest.onBeforeSendHeaders.addListener(onBeforeSendingHeaders, { urls: ['<all_urls>'] }, ['requestHeaders']);
+
+// Uncomment next line to see information about the initiator of the web request.
+// chrome.webRequest.onBeforeRequest.addListener(onBeforeRequest, { urls: ['<all_urls>'] });
