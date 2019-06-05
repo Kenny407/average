@@ -8,6 +8,14 @@
       "*://*/*",
       "webNavigation"
     ],
+    "content_scripts": [
+      {
+        "run_at" :"document_start",
+        "matches": ["<all_urls>"],
+        "js": ["utils/inject-override-functions.js"]
+      }
+    ],
+    "web_accessible_resources" : ["utils/define-globals.js"],
     "background": {
       "scripts": [
         "background/index.js"
