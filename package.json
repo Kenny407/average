@@ -1,0 +1,25 @@
+{
+  "name": "average",
+  "version": "1.0.0",
+  "description": "An experiment in masking our browsing activity online",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint './**/**.js' --cache --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lets-talk-frontend/average.git"
+  },
+  "author": "Let's Talk Frontend Slack Group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lets-talk-frontend/average/issues"
+  },
+  "homepage": "https://github.com/lets-talk-frontend/average#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}

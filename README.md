@@ -1,5 +1,5 @@
 # Average
-> Average is an experiment into masking our browsing activity online.
+> Average is an experiment in masking our browsing activity online.
 
 There are already a variety of tools on the web to block third-party cookies and scripts, and upgrade your connection to HTTPS. However, it is also possible to [fingerprint](https://en.wikipedia.org/wiki/Device_fingerprint) a user, by collecting information from/about their device and using that as a means to identify them. 
 

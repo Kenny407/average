@@ -1,0 +1,17 @@
+  {
+    "name": "Average",
+    "version": "1.0.0",
+    "description": "An experiment in masking our browsing activity online",
+    "manifest_version": 2,
+    "permissions": [
+      "tabs",
+      "*://*/*",
+      "webNavigation"
+    ],
+    "background": {
+      "scripts": [
+        "background/index.js"
+      ],
+      "persistent": false
+    }
+  }
